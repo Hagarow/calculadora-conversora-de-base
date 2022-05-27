@@ -1,0 +1,95 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+
+    int valor;
+    bool executa = true;
+    int bin[8];
+
+    //while para ficar repetindo o comando
+    while(executa){
+            valor = 0;
+
+    // cout significa printar em tela
+
+            cout << "Digite a opcao que deseja converter" << endl;
+            cout << "1- Decimal para Binario" << endl;
+            cout << "2- Binario para Decimal" << endl;
+            cout << "0- Para sair" << endl;
+
+    //cin é o comando que capta o que digita
+            cin >> valor;
+            cout << valor << " = valor digitado" << endl;
+
+
+    if(valor == 0){
+            cout << "sair do Programa";
+        executa = false;
+        exit;
+    }else{
+        // aqui é feito a conversão
+        if(valor == 1){
+            int Decimal;
+            cout << "Digite o valor em Decimal" << endl;
+            cin >> Decimal;
+            cout << "O valor em Decimal e: " << Decimal << endl;
+            //para printar na tela
+            for(int i = 7; i>= 0; i--){
+                if(Decimal % 2 ==0){
+                    bin[i] =  0;
+                }else{
+                    bin[i] = 1;
+
+                }
+                Decimal = Decimal / 2;
+            }// for para printar na tela
+            for(int i = 0; i < 8; i++){
+                cout << bin[i];
+
+            }
+                cout <<  endl;
+
+
+       }else{
+           if(valor == 2){
+
+                int binario;
+                int dec = 0;
+
+            cout << "Digite a opcao que deseja converter" << endl;
+            cout << "1- Decimal para Binario" << endl;
+            cout << "2- Binario para Decimal" << endl;
+            cout << "0- Para sair" << endl;
+
+
+                cout << "Digite o valor em Binario" << endl;
+                cin >> binario;
+
+                for(int i = 0; binario > 0; i++) {
+                dec = dec + pow(2, i) * (binario % 10);
+                binario = binario / 10;
+            }
+
+            cout << "o valor em decimal e :" <<dec;
+            cout << endl;
+            cin >> valor;
+
+             }else{
+                cout << "Opcao invalida" << endl;
+
+
+
+
+
+              }
+           }
+        }
+     }
+
+        return 0;
+
+  }
